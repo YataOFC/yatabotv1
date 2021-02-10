@@ -1,5 +1,5 @@
 exports.wait = () => {
-	return`*「 ESPERE 」O QUIERE BAN?*`
+	return`*「 ESPERE 」O QUIERE BAN☠️?*`
 }
 
 exports.succes = () => {
@@ -23,7 +23,7 @@ exports.lvlnoon = () => {
 }
 
 exports.noregis = () => {
-	return`*「 NO REGISTRADO 」*\n\n*registrate escribiendo ${prefix}daftar nombre|edad* \n*ejemplo ${prefix}daftar Yata|20*`
+	return`*「 NO REGISTRADO 」*\n\n*registrate escribiendo ${prefix}daftar nombre|edad+18* \n*ejemplo ${prefix}daftar Yata|20*`
 }
 
 exports.rediregis = () => {
@@ -51,7 +51,7 @@ exports.ownerg = () => {
 }
 
 exports.admin = () => {
-	return`*「SOLO GRUPO ADMINISTRADOR」*`
+	return`*「SOLO ADMINS」*`
 }
 
 exports.badmin = () => {
@@ -75,11 +75,11 @@ exports.clears = () => {
 }
 
 exports.pc = () => {
-	return`*「 REGISTRASI 」*\n\nuntuk mengetahui apa kamu sudah terdaftar silahkah check message yang saya kirim \n\nNOTE:\n*jika kamu belum mendapatkan pesan. berarti kamu belum menyimpan nomer bot*`
+	return`*「 REGISTRO 」*\n\nuntuk mengetahui apa kamu sudah terdaftar silahkah check message yang saya kirim \n\nNOTE:\n*jika kamu belum mendapatkan pesan. berarti kamu belum menyimpan nomer bot*`
 }
 
 exports.registered = (namaUser, umurUser, serialUser, time, sender) => {
-	return`*「 DATA NEGARA 」*\n\está registrado con los datos \n\n┏━⊱nama\n┗⊱${namaUser}\n┏━⊱número\n┗⊱wa.me/${sender.split("@")[0]}\n┏━⊱edad\n┗⊱${umurUser}\n┏━⊱tiempo de registro\n┗⊱${time}\n\n┏━❉ *NS* ❉━\n┣⊱${serialUser}\n┗⊱NOTA: no olvide este número porque es importante :v`
+	return`*「 DATA NEGARA 」*\n\está registrado con los datos \n\n┏━⊱Nombre\n┗⊱${namaUser}\n┏━⊱Número\n┗⊱wa.me/${sender.split("@")[0]}\n┏━⊱edad\n┗⊱${umurUser}\n┏━⊱tiempo de registro\n┗⊱${time}\n\n┏━❉ *NS* ❉━\n┣⊱${serialUser}\n┗⊱NOTA: no olvide este número porque es importante :v`
 }
 
 exports.cmdnf = (prefix, command) => {
@@ -91,7 +91,7 @@ exports.owneresce = (pushname) => {
 }
 
 exports.reglevelaha = (command, pushname, getLevelingLevel, sender, aha) => {
-	return`*Maaf ${pushname} level mu belum mencukupi*\n\n*┏⊱level mu : ${getLevelingLevel(sender)}*\n*┣⊱jenis command : ${command}*\n*┗⊱syarat level : ${aha}*\n\n_NOTE : CHAT/SELALU ON UNTUK MENDAPATKAN XP_`
+	return`*Losentimos ${pushname} tu nivel no es suficiente*\n\n*┏⊱Tu nivel : ${getLevelingLevel(sender)}*\n*┣⊱Tipo de comando: ${command}*\n*┗⊱Requisitos de nivel : ${aha}*\n\n_NOTE : CHAT/SIEMPRE PARA OBTENER XP_`
 }
 
 exports.reglevelahb = (command, pushname, getLevelingLevel, sender, ahb) => {
@@ -219,7 +219,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 
 exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role) => {
 	return`
-*「 SELAMAT 」*
+*「 CADA DIA  MAS FACHA 」*
 ┏⊱ *Nombre* : ${pushname}
 ┣⊱ *Numero* : wa.me/${sender.split("@")[0]}
 ┣⊱ *Xp* : ${getLevelingXp(sender)}
