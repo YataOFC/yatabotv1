@@ -268,7 +268,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Hola @${num.split('@')[0]}\Bienvenido al grupo *${mdata.subject}* espero sea de tu agrado, hache mama gratis :v`
+				teks = `Hola @${num.split('@')[0]}\ bienvenido al grupo cristiano *${mdata.subject}* espero sea de tu agrado, que mamada existen bots en wasap?🤡`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -278,7 +278,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Ya era hora de que te vayas @${num.split('@')[0]} adios, ni enterado de que estabas en el grupo 🥱`
+				teks = `Adios @${num.split('@')[0]}, ni enterado de que estabas en el grupo 🥱`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -639,7 +639,7 @@ client.on('group-participants-update', async (anu) => {
                 const namaUser = q.substring(0, q.indexOf('|') - 0)
                 const umurUser = q.substring(q.lastIndexOf('|') + 1)
                 const serialUser = createSerial(20)
-                if(isNaN(umurUser)) return await reply('Umur harus berupa angka!!')
+                if(isNaN(umurUser)) return await reply('La edad debe ser un numero!!')
                 if (namaUser.length >= 30) return reply(`why is your name so long it's a name or a train`)
                 if (umurUser > 40) return reply(`your age is too  old maximum 40 years`)
                 if (umurUser < 12) return reply(`your age is too young minimum 12 years`)
@@ -876,7 +876,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nombre del bot* : ${me.name}\n*OWNER* : *AMPIBI*\n*AUTHOR* : AMPIBI\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total de contactos bloqueados* : ${blocked.length}\n*El bot está activo en* : ${kyun(uptime)}`
+					teks = `*Nombre del bot* : ${me.name}\n*OWNER* : *YATA-BOT* : YATA\n*Nombre del Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total de contactos bloqueados* : ${blocked.length}\n*El bot está activo en* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -925,7 +925,7 @@ client.on('group-participants-update', async (anu) => {
 					break 
 				case 'mutual':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
+                if (isGroup) return  reply( '¡Este comando no se puede usar en grupos!')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -944,16 +944,16 @@ client.on('group-participants-update', async (anu) => {
 				if (!q.includes('|')) return  reply(ind.wrongf())
                 const tujuan = q.substring(0, q.indexOf('|') - 1)
                 const jumblah = q.substring(q.lastIndexOf('|') + 1)
-                if(isNaN(jumblah)) return await reply('jumlah harus berupa angka!!')
+                if(isNaN(jumblah)) return await reply('la cantidad debe ser un numero !!')
                 if (jumblah < 100 ) return reply(`minimal transfer 100`)
-                if (checkATMuser(sender) < jumblah) return reply(`uang mu tidak mencukupi untuk melakukan transfer`)
+                if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
                 const tujuantf = `${tujuan.replace("@", '')}@s.whatsapp.net`
                 fee = 0.005 *  jumblah
                 hasiltf = jumblah - fee
                 addKoinUser(tujuantf, hasiltf)
                 confirmATM(sender, jumblah)
                 addKoinUser('62895710073737@s.whatsapp.net', fee)
-                reply(`*「 SUKSES 」*\n\npengiriman uang telah sukses\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumblah transfer : ${jumblah}\npajak : ${fee}`)
+                reply(`*「 SUKSES 」*\n\La transferencia de dinero fue exitosa\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumblah transfer : ${jumblah}\npajak : ${fee}`)
                 break
 				case 'dompet':
 				if (!isRegistered) return reply(ind.noregis())
@@ -963,21 +963,21 @@ client.on('group-participants-update', async (anu) => {
 				case 'buylimit':
 				if (!isRegistered) return reply(ind.noregis())
 				payout = body.slice(10)
-				if(isNaN(payout)) return await reply('limit harus berupa angka!!')
+				if(isNaN(payout)) return await reply('¡El límite debe ser un número!')
 				const koinPerlimit = 300
 				const total = koinPerlimit * payout
-				if ( checkATMuser(sender) <= total) return reply(`maaf uang kamu belum mencukupi. silahkan kumpulkan dan beli nanti`)
+				if ( checkATMuser(sender) <= total) return reply(`lo siento, tu dinero no es suficiente. recoger y comprar más tarde`)
 				if ( checkATMuser(sender) >= total ) {
 					confirmATM(sender, total)
 					bayarLimit(sender, payout)
-					await reply(`*「 PEMBAYARAN BERHASIL 」*\n\n*pengirim* : Admin\n*penerima* : ${pushname}\n*nominal pembelian* : ${payout} \n*harga limit* : ${koinPerlimit}/limit\n*sisa uang mu* : ${checkATMuser(sender)}\n\nproses berhasil dengan nomer pembayaran\n${createSerial(15)}`)
+					await reply(`*「 PAGO EXITOSO 」*\n\n*reminente* : Admin\n*penerima* : ${pushname}\n*nominal pembelian* : ${payout} \n*harga limit* : ${koinPerlimit}/limit\n*sisa uang mu* : ${checkATMuser(sender)}\n\nproses berhasil dengan nomer pembayaran\n${createSerial(15)}`)
 				} 
 				break
 				//no rest api 
 				case 'slap':
                     kapankah = body.slice(1)
                     if (isLimit(sender)) return reply(ind.limitend(pusname))
-					const slap =['anjing','babi lu','anak anjing','udah tolol nub Lagi','muka lo kek monyet','udah jomblo sendirian lagi dirumah tolol','so so an mau punya pacar muka aja kek monyet lepass dari kandang','ganteng doang di toxic aja dibilang baperan','pantek kau','bangsat kau','ku entod kalian nangis kau','memek lu semua','lihat anak anjing lagi baca','ganteng doang jemput cewe dipanggang','kamu cantik beb bullshit anjing cowo buaya','anak dajjal','puki lu','anjing ngajak gelud','sama hantu takut cupu ngentod','cupu cupu aja gausah bacot','kontol lu semua','bocah lu semua kontol','3 Hari Lagi']
+					const slap =['Chapa tu lapo por gil']
 					const ple = slap[Math.floor(Math.random() * slap.length)]
 					pod = await getBuffer(`https://media.giphy.com/media/S8507sBJm1598XnsgD/source.gif`)
 					client.sendMessage(from, pod, image, { quoted: mek, caption: '*Toxic*\n\n'+ ple })
@@ -1346,13 +1346,13 @@ client.on('group-participants-update', async (anu) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `SAFARI NOMAS TERNA DE MRD 👺:\n`
+							teks += `PA ESO ENTRAS AL GRUPO CTMRE 👺:\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`SAFARI NOMAS TERNA DE MRD 👺 @${mentioned[0].split('@')[0]} 👺`, mentioned, true)
+						mentions(`PA ESO ENTRAS AL GRUPO CTMRE 👺 @${mentioned[0].split('@')[0]} 👺`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
